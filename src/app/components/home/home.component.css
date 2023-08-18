@@ -1,0 +1,52 @@
+span,
+p {
+  font-size: 11rem;
+  color: white;
+  font-weight: 100;
+  font-style: italic;
+  text-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.245);
+}
+
+.quoteName {
+  text-align: right;
+  font-size: 2.5rem;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.bolder {
+  font-weight: 300;
+}
+
+@media (max-width: 1200px) {
+  span,
+  p {
+    font-size: 7.5rem;
+  }
+
+  .quoteName {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  span,
+  p {
+    font-size: 4.5rem;
+  }
+
+  .quoteName {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  span,
+  p {
+    font-size: 3rem;
+  }
+
+  .quoteName {
+    font-size: 1.2rem;
+  }
+}

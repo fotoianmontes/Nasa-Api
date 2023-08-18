@@ -1,0 +1,137 @@
+* {
+  transition: 300ms all ease-in-out;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 4rem;
+}
+
+.hidden {
+  display: none;
+}
+
+#nasaLogo {
+  width: 5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  position: fixed;
+  z-index: 1;
+}
+
+a {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+p {
+  color: white;
+}
+
+ul {
+  list-style: none;
+  float: right;
+  padding-right: 2rem;
+  padding-top: 2rem;
+  transition: 300ms all ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  width: fit-content;
+}
+
+a:visited {
+  color: white;
+}
+
+.divider {
+  height: 5px;
+  width: 50%;
+  bottom: 0;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5047268907563025) 100%
+  );
+}
+
+@media (max-width: 768px) {
+  #nasaLogo {
+    display: none;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 2rem;
+    height: 100vh;
+    background-color: lightgrey;
+  }
+
+  nav {
+    position: fixed;
+    right: 0;
+    height: 100vh;
+  }
+
+  .flexbox {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .hidden {
+    display: block;
+  }
+
+  .burgerActive {
+    content: url("../../../assets/img/NASA_close.svg");
+    transform: translateX(2rem);
+  }
+
+  .burgerHidden {
+    content: url("../../../assets/img/NASA_open.svg");
+  }
+
+  #imgBurger {
+    padding: 0;
+    display: block;
+    position: relative;
+    margin-bottom: 1rem;
+    width: 3rem;
+  }
+  .menuActive {
+    transform: translateX(00%);
+  }
+
+  .menuHidden {
+    transform: translateX(calc(100% - 3rem));
+  }
+
+  .navContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  #navBurger {
+    direction: rtl;
+    position: fixed;
+    display: inline-block;
+    right: 0px;
+  }
+}

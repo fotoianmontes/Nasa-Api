@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSearch()">
+  <input
+    type="text"
+    name="search"
+    placeholder="Search something"
+    [(ngModel)]="searchValue"
+    required
+  />
+  <input type="submit" value="Search" />
+</form>
+
+<div *ngFor="let item of result.collection.items">
+  <img src="{{ item.links[0].href }}" alt="" />
+  <span>{{ item.data[0].title }}</span>
+  <span>{{ item.href }}</span>
+</div>

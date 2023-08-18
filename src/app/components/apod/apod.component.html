@@ -1,0 +1,22 @@
+<div *ngIf="isLoaded; then Loaded; else NotLoaded"></div>
+
+<ng-template #NotLoaded>
+  <main>
+    <span class="loading">Loading..</span>
+  </main>
+</ng-template>
+
+<ng-template #Loaded>
+  <main>
+    <div class="container">
+      <img src="{{ result.url }}" alt="{{ result.title }}" />
+      <div class="textContainer">
+        <span class="copy">&copy;Nombre de prueba{{ result.copyright }}</span>
+        <h3>{{ result.title }}</h3>
+        <span class="text"
+          >&nbsp;&nbsp;&nbsp;&nbsp;{{ result.explanation }}</span
+        >
+      </div>
+    </div>
+  </main>
+</ng-template>
