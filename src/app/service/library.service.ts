@@ -14,4 +14,8 @@ export class LibraryService {
   getSearch(search: string): Observable<any> {
     return this._http.get(this.url + encodeURI(search));
   }
+
+  getDeepSearch(search: string): Observable<any> {
+    return this._http.get(search);
+  }
 }

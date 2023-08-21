@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LibraryComponent } from './components/library/library.component';
 import { FormsModule } from '@angular/forms';
+import { ThumbResultComponent } from './components/thumb-result/thumb-result.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     HeaderComponent,
     LibraryComponent,
+    ThumbResultComponent,
   ],
   imports: [BrowserModule, routing, HttpClientModule, FormsModule],
   providers: [appRoutingProviders],

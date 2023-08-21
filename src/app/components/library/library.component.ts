@@ -12,6 +12,8 @@ export class LibraryComponent {
   search: any;
   searchValue: string = '';
   public result: any;
+  public showResults: boolean = false;
+  modalVisible: { [key: string]: boolean } = {};
 
   constructor(
     private _route: ActivatedRoute,
@@ -20,20 +22,27 @@ export class LibraryComponent {
   ) {}
 
   ngOnInit() {
-    this._route.params.subscribe((params: Params) => {
-      this.search = params['search'];
-    });
+    this.result.collection.items.forEach(
+      (item: any, index: string | number) => {
+        this.modalVisible[index] = false;
+      }
+    );
   }
 
   onSearch() {
     if (this.searchValue != undefined && this.searchValue != '') {
-      console.log(encodeURI(this.searchValue));
+      this.showResults = false;
       this.libraryService.getSearch(this.searchValue).subscribe(
         (response) => {
           this.result = response;
+          this.showResults = true;
         },
         (error) => {}
       );
     }
+  }
+
+  toggleModalVisible(index: number) {
+    this.modalVisible[index] = !this.modalVisible[index];
   }
 }

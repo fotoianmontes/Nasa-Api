@@ -1,0 +1,19 @@
+<!--Type true = jpg-->
+
+<section>
+  <div *ngIf="type == true; then typeImage; else typeVideo"></div>
+  <ng-template #typeImage>
+    <figure>
+      <img src="{{ dataDetail }}" alt="Random image" />
+      <figcaption>
+        <a href="{{ dataDetail }}" target="_blank"
+          >Open image in full resolution</a
+        >
+      </figcaption>
+    </figure>
+  </ng-template>
+
+  <ng-template #typeVideo>
+    <video controls src="{{ dataDetail }}"></video>
+  </ng-template>
+</section>

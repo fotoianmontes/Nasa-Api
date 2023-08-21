@@ -32,6 +32,9 @@ p {
 
 ul {
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
   float: right;
   padding-right: 2rem;
   padding-top: 2rem;
