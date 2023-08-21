@@ -11,6 +11,5 @@ export class HeaderComponent {
   toggleMenu(event: Event) {
     event.stopPropagation();
     this.burgerMenu = !this.burgerMenu;
-    alert(this.burgerMenu);
   }
 }
