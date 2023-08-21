@@ -1,4 +1,5 @@
 form {
+  position: relative;
   padding: 1rem;
   display: flex;
   flex-direction: row;
@@ -47,6 +48,7 @@ form {
   form {
     margin-top: 2rem;
     margin-bottom: 1rem;
+    z-index: 90;
   }
 
   .cover {

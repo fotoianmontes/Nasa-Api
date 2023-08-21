@@ -106,7 +106,7 @@ a:visited {
 
   .burgerActive {
     content: url("../../../assets/img/NASA_close.svg");
-    transform: translateX(2rem);
+    transform: translateX(2.5rem);
   }
 
   .burgerHidden {
@@ -124,8 +124,16 @@ a:visited {
     transform: translateX(00%);
   }
 
+  .ulActive {
+    display: flex;
+  }
+
+  .ulHidden {
+    display: none;
+  }
+
   .menuHidden {
-    transform: translateX(calc(100% - 3rem));
+    transform: translateX(calc(100% - 2rem));
   }
 
   .navContainer {

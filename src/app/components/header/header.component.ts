@@ -7,9 +7,22 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   burgerMenu: boolean = false;
+  ulStatus: boolean = false;
 
-  toggleMenu(event: Event) {
+  sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async toggleMenu(event: Event) {
     event.stopPropagation();
-    this.burgerMenu = !this.burgerMenu;
+
+    if (this.ulStatus) {
+      this.burgerMenu = !this.burgerMenu;
+      await this.sleep(300);
+      this.ulStatus = !this.ulStatus;
+    } else {
+      this.burgerMenu = !this.burgerMenu;
+      this.ulStatus = !this.ulStatus;
+    }
   }
 }

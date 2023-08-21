@@ -24,7 +24,12 @@
         src="../../../assets/img/NASA_open.svg"
         alt="Menu burger"
       />
-      <ul>
+      <ul
+        [ngClass]="{
+          ulActive: ulStatus,
+          ulHidden: !ulStatus
+        }"
+      >
         <li>
           <img
             class="hidden"
