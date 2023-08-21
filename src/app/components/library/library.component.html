@@ -10,42 +10,35 @@
 </form>
 <main>
   <div class="results">
-    <div class="results">
-      <div *ngIf="showResults">
-        <div *ngFor="let item of result.collection.items; let i = index">
-          <div *ngIf="item.links[0].href != ''">
+    <div *ngIf="showResults">
+      <div *ngFor="let item of result.collection.items; let i = index">
+        <div
+          *ngIf="
+            item.links && item.links.length > 0 && item.links[0].href != ''
+          "
+        >
+          <!--Este es el ngIf que da problemas-->
+          <img
+            (click)="toggleModalVisible(i)"
+            class="cover"
+            src="{{ item.links[0].href }}"
+            alt=""
+          />
+          <div class="modal">
             <img
+              class="closeButton"
               (click)="toggleModalVisible(i)"
-              class="cover"
-              src="{{ item.links[0].href }}"
-              alt=""
+              *ngIf="modalVisible[i]"
+              src="../../../assets/img/NASA_logo_X.svg"
+              alt="Cerrar modal"
             />
-            <div class="modal">
-              <img
-                class="closeButton"
-                (click)="toggleModalVisible(i)"
-                *ngIf="modalVisible[i]"
-                src="../../../assets/img/NASA_logo_X.svg"
-                alt="Cerrar modal"
-              />
-              <app-thumb-result
-                [collection]="item.href"
-                *ngIf="modalVisible[i]"
-              ></app-thumb-result>
-            </div>
+            <app-thumb-result
+              [collection]="item.href"
+              *ngIf="modalVisible[i]"
+            ></app-thumb-result>
           </div>
         </div>
       </div>
     </div>
   </div>
 </main>
-
-<!--
-
-<div *ngFor="let item of result.collection.items">
-    <img src="{{ item.links[0].href }}" alt="" />
-    <span>{{ item.data[0].title }}</span>
-    <span>{{ item.href }}</span>
-  </div>
-
--->

@@ -22,11 +22,13 @@ export class LibraryComponent {
   ) {}
 
   ngOnInit() {
-    this.result.collection.items.forEach(
-      (item: any, index: string | number) => {
-        this.modalVisible[index] = false;
-      }
-    );
+    if (this.result && this.result.collection && this.result.collection.items) {
+      this.result.collection.items.forEach(
+        (item: any, index: string | number) => {
+          this.modalVisible[index] = false;
+        }
+      );
+    }
   }
 
   onSearch() {

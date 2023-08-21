@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   burgerMenu: boolean = false;
 
-  toggleMenu() {
+  toggleMenu(event: Event) {
+    event.stopPropagation();
     this.burgerMenu = !this.burgerMenu;
+    alert(this.burgerMenu);
   }
 }
