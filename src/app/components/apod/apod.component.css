@@ -60,6 +60,9 @@ img {
     min-height: 100vh;
   }
 
+  .loading {
+    font-size: 4rem;
+  }
   .textContainer {
     max-width: 70%;
   }
