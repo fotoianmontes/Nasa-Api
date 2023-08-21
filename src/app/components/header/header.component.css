@@ -117,7 +117,7 @@ a:visited {
     padding: 0;
     display: block;
     position: relative;
-    margin-bottom: 4rem;
+    bottom: 12%;
     width: 3rem;
   }
   .menuActive {
